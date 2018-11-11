@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class FootballKit {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double tShirtPrice = Double.parseDouble(scanner.nextLine());
+        double sumNeeded = Double.parseDouble(scanner.nextLine());
+
+        double shortsPrice = tShirtPrice * 0.75;
+        double socksPrice = shortsPrice * 0.2;
+        double footballBoots = (tShirtPrice + shortsPrice) * 2;
+        double totalSum = tShirtPrice + shortsPrice + socksPrice + footballBoots;
+        double discountSum = totalSum - (totalSum * ((double) 15/100));
+
+        String winBall = "Yes, he will earn the world-cup replica ball!";
+        String noWin = "No, he will not earn the world-cup replica ball.";
+
+        if (discountSum >= sumNeeded) {
+            System.out.printf("%s%nHis sum is %.2f lv.", winBall, discountSum);
+
+        } else {
+            discountSum = sumNeeded - discountSum;
+            System.out.printf("%s%nHe needs %.2f lv. more.", noWin, discountSum);
+        }
+
+    }
+}

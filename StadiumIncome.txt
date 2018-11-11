@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class StadiumIncome {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int stadiumSectors = Integer.parseInt(scanner.nextLine());
+        int stadiumCapacity = Integer.parseInt(scanner.nextLine());
+        double ticketPrice = Double.parseDouble(scanner.nextLine());
+        double incomePerSector = (stadiumCapacity * ticketPrice) / stadiumSectors;
+        double totalIncome = incomePerSector * stadiumSectors;
+        double sumCharity = (totalIncome - (incomePerSector * (double) 75/100)) / 8;
+
+        System.out.printf("Total income - %.2f BGN %n", totalIncome);
+        System.out.printf("Money for charity - %.2f BGN", sumCharity);
+
+
+    }
+
+}

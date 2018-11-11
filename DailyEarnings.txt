@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class DailyEarnings {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int workingDaysPerMonth = Integer.parseInt(scanner.nextLine());
+        double earningsPerDay = Double.parseDouble(scanner.nextLine());
+        double dollarsToBGN = Double.parseDouble(scanner.nextLine());
+
+        double monthlySalaryUSD = workingDaysPerMonth * earningsPerDay;
+        double annualIncome = (monthlySalaryUSD * 12) + (monthlySalaryUSD * 2.5);
+        double taxes = annualIncome * 0.25;
+        double netAnnualIncome = annualIncome - taxes;
+        double salaryInBGN = netAnnualIncome * dollarsToBGN;
+        double average = salaryInBGN / 365;
+
+        System.out.printf("%.2f", average);
+
+    }
+}

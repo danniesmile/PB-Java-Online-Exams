@@ -1,0 +1,29 @@
+package exams;
+
+        import java.util.Scanner;
+
+public class ShoppingTime {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int breakTime = Integer.parseInt(scanner.nextLine());
+        double priceForPeripheral = Double.parseDouble(scanner.nextLine());
+        double priceForProgram = Double.parseDouble(scanner.nextLine());
+        double priceForFrappe = Double.parseDouble(scanner.nextLine());
+
+        double timeFrappe = 5;
+        double time = ((double) breakTime - timeFrappe);
+        double timePeripheral = 3 * 2;
+        double timeProgram = 2 * 2;
+
+        double relaxTime = time - (timePeripheral + timeProgram);
+        double moneyForPeripheral = 3 * priceForPeripheral;
+        double moneyForProgram = 2 * priceForProgram;
+
+        double moneyTotal = moneyForProgram + moneyForPeripheral + priceForFrappe;
+
+        System.out.printf("%.2f%n", moneyTotal);
+        System.out.printf("%.0f", relaxTime);
+
+    }
+}

@@ -1,0 +1,26 @@
+package exams;
+
+import java.util.Scanner;
+
+public class GoingHome {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int distanceInKm = Integer.parseInt(scanner.nextLine());
+        int benzinPer100Km = Integer.parseInt(scanner.nextLine());
+        double benzinPricePerLiter = Double.parseDouble(scanner.nextLine());
+        int moneyFromTournament = Integer.parseInt(scanner.nextLine());
+
+        double carCost = ((double) distanceInKm * (double) benzinPer100Km) / 100;
+        double totalCost = carCost * benzinPricePerLiter;
+        double moneyLeft = Math.abs(totalCost - (double) moneyFromTournament);
+        double money = 0.0;
+
+        if ((double)moneyFromTournament >= totalCost) {
+            System.out.printf("You can go home. %.2f money left.", moneyLeft);
+        } else {
+            money = ((double) moneyFromTournament / 5);
+            System.out.printf("Sorry, you cannot go home. Each will receive %.2f money.", money);
+        }
+    }
+}

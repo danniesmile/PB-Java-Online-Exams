@@ -1,0 +1,101 @@
+package exams;
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class FootballSouvenirs {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String team = reader.readLine();
+        String souvenir = reader.readLine();
+        int numSouvenir = Integer.parseInt(reader.readLine());
+
+        double price = 0;
+
+
+        if (souvenir.equals("flags")){
+            switch (team){
+                case "Argentina" :
+                    price += 3.25;
+                    break;
+                case "Brazil" :
+                    price += 4.20;
+                    break;
+                case "Croatia" :
+                    price += 2.75;
+                    break;
+                case "Denmark" :
+                    price += 3.10;
+                    break;
+                default :
+                    System.out.println("Invalid country!");
+                    return;
+            }
+        } else if (souvenir.equals("caps")){
+            switch (team){
+                case "Argentina" :
+                    price += 7.20;
+                    break;
+                case "Brazil" :
+                    price += 8.50;
+                    break;
+                case "Croatia" :
+                    price += 6.90;
+                    break;
+                case "Denmark" :
+                    price += 6.50;
+                    break;
+                default :
+                    System.out.println("Invalid country!");
+                    return;
+            }
+        }else if (souvenir.equals("posters")){
+            switch (team){
+                case "Argentina" :
+                    price += 5.10;
+                    break;
+                case "Brazil" :
+                    price += 5.35;
+                    break;
+                case "Croatia" :
+                    price += 4.95;
+                    break;
+                case "Denmark" :
+                    price += 4.80;
+                    break;
+                default :
+                    System.out.println("Invalid country!");
+                    return;
+            }
+
+        }else if (souvenir.equals("stickers")){
+            switch (team){
+                case "Argentina" :
+                    price += 1.25;
+                    break;
+                case "Brazil" :
+                    price += 1.20;
+                    break;
+                case "Croatia" :
+                    price += 1.10;
+                    break;
+                case "Denmark" :
+                    price += 0.90;
+                    break;
+                default :
+                    System.out.println("Invalid country!");
+                    return;
+            }
+        }else {
+            System.out.println("Invalid stock!");
+            return;
+        }
+        price = price * numSouvenir;
+        System.out.printf("Pepi bought %d %s of %s for %.2f lv.",numSouvenir, souvenir , team , price);
+    }
+}
+
+
+

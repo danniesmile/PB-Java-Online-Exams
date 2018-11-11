@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class VegetableMarket {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double vegetablesKG = Double.parseDouble(scanner.nextLine());
+        double fruitsKG = Double.parseDouble(scanner.nextLine());
+        int veggiesTotalKG = Integer.parseInt(scanner.nextLine());
+        int fruitsTotalKG = Integer.parseInt(scanner.nextLine());
+
+        double veggiesTotalSum = vegetablesKG * veggiesTotalKG;
+        double fruitsTotalSum = fruitsKG * fruitsTotalKG;
+
+        System.out.println((veggiesTotalSum + fruitsTotalSum) / 1.94);
+    }
+}
