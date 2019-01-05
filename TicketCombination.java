@@ -19,7 +19,6 @@ public class TicketCombination {
                             count++;
                             sum = i + j + k + l + m;
                             if (combination == count) {
-                                //ticket = String.format("%c%c%c%d%d", i, j, k, l, m);
                                 System.out.printf("Ticket combination: %c%c%c%d%d%n", i, j, k, l, m);
                                 System.out.printf("Prize: %d lv.", sum);
                             }
